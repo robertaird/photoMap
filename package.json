@@ -19,6 +19,7 @@
   "homepage": "https://github.com/robertaird/mvp#readme",
   "dependencies": {
     "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
     "express": "^4.16.2",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",

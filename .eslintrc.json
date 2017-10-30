@@ -1,5 +1,11 @@
 {
     "extends": "airbnb-base",
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "angular": true
+    },
     "rules": {
         "linebreak-style": 0,
         "no-console": 0

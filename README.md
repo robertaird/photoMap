@@ -1,4 +1,4 @@
-# Instagram Map #
+# InstaMapped #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -18,8 +18,7 @@ Once the project moves into development, the press release can be used as a touc
  '
 ## What's this all for then? ##
   > A replacement for Instagram's built in map, which was removed about a year ago now.
-
-
+  
 ## Summary ##
   > I loved Instagram's map feature, seeing photos spread out over places I and others have been. It was disappointing to see it removed, and it would be great to have it back.
 

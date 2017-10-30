@@ -5,12 +5,16 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
-// const router = express.Router();
-
+const router = express.Router();
 app.use(express.static(`${__dirname}/public`));
+app.use('/', router);
+// app.engine('.html');
 
-app.get('/', (req, res) => {
-  res.send('public/index.html');
+router.route('/', (req, res, next) => {
+  next();
+}).get((req, res) => {
+  console.log('hello');
+  res.send();
 });
 
 app.listen(port, () => {
