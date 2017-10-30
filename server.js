@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res) => {
-  res.send('helloooo!');
+  res.send('public/index.html');
 });
 
 app.listen(port, () => {
