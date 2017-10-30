@@ -1,0 +1,27 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "Instagram Map",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertaird/mvp.git"
+  },
+  "author": "rob aird",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertaird/mvp/issues"
+  },
+  "homepage": "https://github.com/robertaird/mvp#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "express": "^4.16.2",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "mongoose": "^4.12.5"
+  }
+}
