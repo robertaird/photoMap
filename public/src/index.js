@@ -1,1 +1,1 @@
-const app = angular.module('instaMapped', []);
+const app = angular.module('instaMapped', ['ngMap']);
