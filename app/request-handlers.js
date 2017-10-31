@@ -38,13 +38,22 @@ const authRequest = ({ code }) => {
       grant_type: 'authorization_code',
     },
   };
-  console.log(options);
 
   request.post(options, (err, res, bod) => {
     if (err) {
       console.error('Something did not go as planned!', err);
     } else {
-      console.log(bod);
+      console.log(typeof bod);
+      const { access_token, user } = JSON.parse(bod);
+      User.find({ id: user.id })
+        .then((found) => {
+          console.log(found, found.length);
+          if (found.length === 0) {
+            return User.createUser(user);
+          }
+          return found;
+        });
+      console.log(access_token);
     }
   });
 };
