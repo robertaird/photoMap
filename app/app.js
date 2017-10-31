@@ -8,5 +8,5 @@ const mdb = mongoose.connection;
 
 mdb.on('error', console.error.bind(console, 'connection error:'));
 mdb.once('open', () => {
-  console.log('DB Connection Established!')
+  console.log('DB Connection Established!');
 });

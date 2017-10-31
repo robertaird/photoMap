@@ -1,5 +1,8 @@
-<ng-map zoom="1" center="[0, 0]">
-  <!-- <marker position="[40.74, -74.18]" /> -->
-  <shape name="circle" radius="400" center="[0, 0]" radius="4000" />
-  <control name="overviewMap" opened="true" />
-</ng-map>
+
+<div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{$ctrl.googleMapsUrl}}">
+  <ng-map zoom="1" center="[0, 0]" style="height:500px; width:600px">
+    <!-- <marker position="[40.74, -74.18]" /> -->
+    <shape name="circle" radius="500" center="[0, 0]" radius="4000" />
+    <control name="overviewMap" opened="true" />
+  </ng-map>
+</div>
