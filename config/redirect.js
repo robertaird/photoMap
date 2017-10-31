@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'http://localhost/5000/map/',
+  url: 'http://localhost:8000/map/',
 };
