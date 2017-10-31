@@ -1,6 +1,7 @@
 const redirect = require('../config/redirect.js');
 const request = require('request');
 const User = require('./models/user.js');
+const Photos = require('./models/photo.js');
 
 /*
 curl -F 'client_id=CLIENT_ID' \
@@ -10,15 +11,25 @@ curl -F 'client_id=CLIENT_ID' \
     -F 'code=CODE' \
 */
 
-const imageRequest = ({ access_token }) => {
+const imageRequest = (accessToken) => {
+  console.log(accessToken);
   const options = {
-    url: `https://api.instagram.com/v1/users/self/?access_token=${access_token}`,
+    url: `https://api.instagram.com/v1/users/self/media/recent/?access_token=${accessToken}`,
     method: 'GET',
-  }
+  };
 
   request.get(options, (err, res, bod) => {
     if (err) { console.error('Unable to fetch!', err); }
-    console.log(bod);
+    const parsed = JSON.parse(bod);
+    const hasLocation = parsed.data
+      .filter(photo => !!photo.location)
+      .map((photo) => {
+        if (photo.caption === null) {
+          photo.caption = { text: undefined };
+        }
+        return photo;
+      });
+    Photos.savePhotos(hasLocation);
   });
 };
 
@@ -53,7 +64,7 @@ const authRequest = ({ code }) => {
           }
           return found;
         });
-      console.log(access_token);
+      imageRequest(access_token);
     }
   });
 };
