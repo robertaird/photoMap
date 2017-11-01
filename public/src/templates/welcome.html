@@ -1,3 +1,6 @@
 <div>
   <p>Welcome, {{$ctrl.profile.username}}!</p>
+  {{$ctrl.removeLink}}
+  <p><a href='http://localhost:8000/#!main?user=307648671'>Refresh</a></p>
+  <p><a href={{$ctrl.removeLink}}>Remove user</a></p>
 </div>

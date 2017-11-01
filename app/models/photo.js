@@ -14,6 +14,7 @@ const photoSchema = mongoose.Schema({
     longitude: { type: Number, required: true },
     name: { type: String },
   },
+  favorite: { type: Boolean, default: false },
 });
 
 const Photo = mongoose.model('Photo', photoSchema);

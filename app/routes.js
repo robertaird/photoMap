@@ -7,22 +7,31 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/removeuser*', (req, res) => {
+  console.log(req.query, 'inside removeuser');
+  const { id } = req.query;
+  User.remove({ id }, (err) => {
+    console.log(err);
+  });
+  Photos.remove({ user_id: id }, (err) => {
+    console.log(err);
+  });
+  res.redirect('/');
+});
+
 app.get('/users', (req, res) => {
-  console.log(req.query);
   const { id } = req.query;
   User.find({ id })
     .then((found) => {
-      console.log(found, 'inside /users');
       res.send(found[0]);
     });
 });
 
 app.get('/photos', (req, res) => {
-  console.log(req.query);
   const { id } = req.query;
   Photos.find({ user_id: id })
     .then((found) => {
-      console.log(found, 'inside /photos');
+      // console.log(found, 'inside /photos');
       res.send({ photos: found });
     });
 });
