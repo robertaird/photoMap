@@ -9,9 +9,7 @@
       icon="{{$ctrl.testIcon}}"
       id="1605286936398680345_307648671" 
       on-click="$ctrl.showInfo('1605286936398680345_307648671')"></marker>
-    <marker ng-if="$ctrl.photos.length > 0" ng-repeat="photo in $ctrl.photos" position="{{photo.location.latitude}}, {{photo.location.longitude}}"></marker>
+    <marker ng-if="$ctrl.photos.length > 0" ng-repeat="photo in $ctrl.photos" optimized="false" icon="{{photo.thumbnail}}"position="{{photo.location.latitude}}, {{photo.location.longitude}}" on-click"$ctrl.showInfo({{photo.id}})"></marker>
   </ng-map>
-  <!-- {{$ctrl.user}};
-  {{$ctrl.testUrl}}
-  <img src="{{$ctrl.testUrl}}"> -->
+  <pre>{{$ctrl.photos | json}}</pre>
 </div>
