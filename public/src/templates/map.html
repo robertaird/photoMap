@@ -3,6 +3,12 @@
     <!-- <marker position="[40.74, -74.18]" /> -->
     <shape name="circle" radius="500" center="[0, 0]" radius="4000" />
     <control name="overviewMap" opened="true" />
+    <marker position="29.96199, -90.06095" 
+    optimized="false"
+    icon="{{$ctrl.testIcon}}"></marker>
+    <marker ng-if="$ctrl.photos.length > 0" ng-repeat="photo in $ctrl.photos" position="{{photo.location.latitude}}, {{photo.location.longitude}}"></marker>
   </ng-map>
   {{$ctrl.user}};
+  {{$ctrl.testUrl}}
+  <img src="{{$ctrl.testUrl}}">
 </div>
