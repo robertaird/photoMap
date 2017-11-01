@@ -17,6 +17,16 @@ app.get('/users', (req, res) => {
     });
 });
 
+app.get('/photos', (req, res) => {
+  console.log(req.query);
+  const { id } = req.query;
+  Photos.find({ id })
+    .then((found) => {
+      console.log(found, 'inside /photos');
+      res.send({ photos: found });
+    });
+});
+
 app.get('/map', (req, res) => {
   request.auth(req.query, (user) => {
     const { id } = user[0];
