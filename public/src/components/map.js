@@ -14,7 +14,7 @@ angular.module('instaMapped')
         $uibModal.open({
           templateUrl: '/src/templates/modal.html',
         });
-        $http.post(`http://localhost:8000/photos?id=${id}`).then((result) => {
+        $http.post(`http://photomapped.herokuapp.com//photos?id=${id}`).then((result) => {
           console.log(result);
         });
       };
@@ -31,7 +31,7 @@ angular.module('instaMapped')
       };
 
       this.getPhotos = (user) => {
-        $http.get(`http://localhost:8000/photos?id=${user}`).then((result) => {
+        $http.get(`http://photomapped.herokuapp.com/photos?id=${user}`).then((result) => {
           const { photos } = result.data;
           if (photos.length > 0) {
             this.generateThumbnails(photos);

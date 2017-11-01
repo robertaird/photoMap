@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'http://localhost:8000/map/',
+  url: 'http://photomapped.herokuapp.com/map/',
 };
