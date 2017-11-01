@@ -1,5 +1,7 @@
 const express = require('express');
 const request = require('./request-handlers.js');
+const User = require('./models/user.js');
+const Photos = require('./models/photo.js');
 
 const app = express();
 
@@ -7,12 +9,18 @@ app.use(express.json());
 
 app.get('/users', (req, res) => {
   console.log(req.query);
-  res.sendStatus(300);
-})
+  const { id } = req.query;
+  User.find({ id })
+    .then((found) => {
+      console.log(found, 'inside /users');
+      res.send(found[0]);
+    });
+});
+
 app.get('/map', (req, res) => {
   request.auth(req.query, (user) => {
     const { id } = user[0];
-    console.log(user[0].id, id);
+    // console.log(user[0].id, id);
     // res.append('Current-User', user.id);
     res.redirect(`/main?id=${id}`);
   });
@@ -20,7 +28,7 @@ app.get('/map', (req, res) => {
 
 app.get('/main*', (req, res) => {
   const { id } = req.query;
-  console.log(id);
+  // console.log(id);
   res.redirect(`/#!main?user=${id}`);
 });
 

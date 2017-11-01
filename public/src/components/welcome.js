@@ -4,12 +4,18 @@ angular.module('instaMapped')
       user: '<',
     },
     controller: function welcomeControl($http) {
-      this.getUser = () => {
-        $http.get(`http://localhost:8000/users?id=${this.user}`).then((result) => {
+      this.profile = { username: 'hold please' };
+      this.getUser = (user) => {
+        $http.get(`http://localhost:8000/users?id=${user}`).then((result) => {
           console.log(result.data);
+          this.profile = result.data;
         });
       };
-      this.getUser();
+      this.$onInit = () => {
+        console.log(this.user)
+        this.getUser(this.user);
+      };
+      
     },
     templateUrl: '/src/templates/welcome.html',
   });
