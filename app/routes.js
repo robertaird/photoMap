@@ -20,7 +20,7 @@ app.get('/users', (req, res) => {
 app.get('/photos', (req, res) => {
   console.log(req.query);
   const { id } = req.query;
-  Photos.find({ id })
+  Photos.find({ user_id: id })
     .then((found) => {
       console.log(found, 'inside /photos');
       res.send({ photos: found });
