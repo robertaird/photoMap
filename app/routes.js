@@ -5,6 +5,10 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/users', (req, res) => {
+  console.log(req.query);
+  res.sendStatus(300);
+})
 app.get('/map', (req, res) => {
   request.auth(req.query, (user) => {
     const { id } = user[0];
