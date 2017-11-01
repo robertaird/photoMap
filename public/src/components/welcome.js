@@ -14,7 +14,7 @@ angular.module('instaMapped')
       this.$onInit = () => {
         this.getUser(this.user);
         this.removeLink = `http://localhost:8000/removeuser?id=${this.user}`;
-        console.log(this.user, 'on init', this.removeLink);
+        // console.log(this.user, 'on init', this.removeLink);
       };
     },
     templateUrl: '/src/templates/welcome.html',

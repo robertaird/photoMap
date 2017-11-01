@@ -1,3 +1,7 @@
+    body {
+      padding-left: 5px;
+    }
     #map {
       height: 500px;
     }
+    .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

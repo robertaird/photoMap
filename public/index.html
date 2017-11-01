@@ -8,11 +8,24 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="ui-bootstrap-csp.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   <script src="config/config.js"></script>
+  <script src="lib/dist/ui-bootstrap-tpls.js"></script>
+  <script src="lib/dist/ui-bootstrap.js.js"></script>
   <script src="lib/angular-route.js"></script>
-  <script src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
   <script src="lib/ng-map.min.js"></script>
   <script src="src/index.js"></script>
   <script src="src/components/welcome.js"></script>
@@ -23,11 +36,11 @@
   <div ng-controller="MainCtrl">
 
     <div ng-view></div>
-      <pre>$location.path() = {{$location.path()}}</pre>
+      <!-- <pre>$location.path() = {{$location.path()}}</pre>
       <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
       <pre>$route.current.scope = {{$route.current.scope}}</pre>
       <pre>$route.current.params = {{$route.current.params}}</pre>
-      <pre>$routeParams = {{$routeParams}}</pre>
+      <pre>$routeParams = {{$routeParams}}</pre> -->
   </div>
 </body>
 </html>

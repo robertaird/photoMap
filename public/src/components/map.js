@@ -3,7 +3,7 @@ angular.module('instaMapped')
     bindings: {
       user: '<',
     },
-    controller: function mapControl($http, $uibModal) {
+    controller: function mapControl($http) {
       this.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${window.GOOGLE_MAP_KEY}`;
       this.photos = [{ location: { latitude: 43, longitude: 34 } },
         { location: { latitude: 3, longitude: 37 } },
@@ -11,9 +11,6 @@ angular.module('instaMapped')
 
       this.showInfo = (event, id) => {
         console.log(event, id);
-        // $uibModal.open({
-
-        // });
         // $http.post(`http://localhost:8000/photos?id=${id}`).then((result) => {
         //   console.log(result);
         // });

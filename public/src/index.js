@@ -1,4 +1,4 @@
-const app = angular.module('instaMapped', ['ngMap', 'ngRoute'])
+const app = angular.module('instaMapped', ['ngMap', 'ui.bootstrap', 'ngRoute'])
   .controller('MainCtrl', function ($scope, $route, $routeParams, $location) {
       $scope.$route = $route;
       $scope.$location = $location;
