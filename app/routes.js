@@ -19,6 +19,21 @@ app.get('/removeuser*', (req, res) => {
   res.redirect('/');
 });
 
+app.post('/photos*', (req, res) => {
+  console.log(req.query);
+  const { id } = req.query;
+  console.log(id);
+  Photos.findOne({ id }).then((item) => {
+    console.log(item);
+  });
+  Photos.findOneAndUpdate({ id }, { favorite: true }, (err) => {
+    console.log(err);
+    Photos.findOne({ id }).then((item) => {
+      res.send(item.favorite);
+    });
+  });
+  // res.send();
+});
 app.get('/users', (req, res) => {
   const { id } = req.query;
   User.find({ id })

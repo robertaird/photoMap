@@ -15,6 +15,15 @@ angular.module('instaMapped')
         origin: [0, 0],
         anchor: [25, 25],
       };
+
+      this.showInfo = (event, id) => {
+        // console.log($(event.target).attr("data-id"));
+        console.log(id);
+        $http.post(`http://localhost:8000/photos?id=${id}`).then((result) => {
+          console.log(result);
+        });
+      };
+
       this.generateThumbnails = (photos) => {
         this.thumbs = photos.map((photo) => {
           // url://photo.image.thumbnail,
