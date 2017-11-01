@@ -3,13 +3,21 @@ const request = require('./request-handlers.js');
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/map', (req, res) => {
-  request.auth(req.query);
-  res.redirect('/main');
+  request.auth(req.query, (user) => {
+    const { id } = user[0];
+    console.log(user[0].id, id);
+    // res.append('Current-User', user.id);
+    res.redirect(`/main?id=${id}`);
+  });
 });
 
-app.get('/main', (req, res) => {
-  res.redirect('/#!main');
+app.get('/main*', (req, res) => {
+  const { id } = req.query;
+  console.log(id);
+  res.redirect(`/#!main?user=${id}`);
 });
 
 

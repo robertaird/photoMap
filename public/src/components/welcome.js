@@ -1,5 +1,8 @@
 angular.module('instaMapped')
   .component('welcomeView', {
+    bindings: {
+      user: '<',
+    },
     controller: function welcomeControl() {
 
     },

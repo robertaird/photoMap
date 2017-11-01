@@ -33,7 +33,7 @@ const imageRequest = (accessToken) => {
   });
 };
 
-const authRequest = ({ code }) => {
+const authRequest = ({ code }, callback) => {
   const options = {
     url: 'https://api.instagram.com/oauth/access_token',
     crossDomain: true,
@@ -54,17 +54,18 @@ const authRequest = ({ code }) => {
     if (err) {
       console.error('Something did not go as planned!', err);
     } else {
-      console.log(typeof bod);
       const { access_token, user } = JSON.parse(bod);
+      imageRequest(access_token);
       User.find({ id: user.id })
         .then((found) => {
-          console.log(found, found.length);
           if (found.length === 0) {
             return User.createUser(user);
           }
           return found;
+        })
+        .then((newUser) => {
+          callback(newUser);
         });
-      imageRequest(access_token);
     }
   });
 };

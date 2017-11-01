@@ -50,7 +50,7 @@ module.exports.savePhotos = (photos) => {
     },
     user_id: user.id,
   }, (err, newPhoto) => {
-    if (err) { console.error('Could not add photo', err); }
+    if (err) { console.log('Could not add photo'); }
     return newPhoto;
   }));
 };
