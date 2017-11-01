@@ -10,39 +10,12 @@ const app = express();
 
 const port = process.env.PORT || 8080;
 
-// app.use(express.json());
-// const router = express.Router();
-// app.use('/', router);
-// app.use('/map/', router);
-// app.use('*', (req, res, next) => {
-//   console.log('hello', req.path);
-//   next();
-// });
+app.use(express.json());
 
 app.use(routes);
 
-// app.get('/map', (req, res) => {
-//   request.auth(req.query);
-//   res.redirect('/main');
-// });
-
-// app.get('/main', (req, res) => {
-//   res.redirect('/#!main');
-// });
-
 app.use(express.static(`${__dirname}/public`));
-// router.route('/', (req, res, next) => {
-//   next();
-// }).get((req, res) => {
-//   res.send();
-// });
 
-// router.route('/map/', (req, res, next) => {
-//   next();
-// }).get((req, res) => {
-//   console.log(req.url);
-//   res.send('Hello!');
-// });
 console.log('Greetings!');
 
 app.listen(port, () => {
